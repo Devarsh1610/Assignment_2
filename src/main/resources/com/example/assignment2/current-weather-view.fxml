@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!--Used stackpane to view everything on the top view.-->
+<StackPane prefHeight="589.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment2.controller.CurrentWeatherController">
+    <children>
+        <VBox alignment="CENTER" spacing="15.0">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <Label fx:id="appTitle" alignment="CENTER" text="Weather App">
+                    <font>
+                        <Font size="28.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                    <HBox.hgrow>
+                        <Priority fx:constant="ALWAYS" />
+                    </HBox.hgrow>
+                </Label>
+
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                    <children>
+                        <TextField fx:id="cityInput" promptText="Enter City" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="getWeatherbtn" mnemonicParsing="false" onAction="#getWeatherfromOpenWeatherAPI" text="Get Weather" />
+                    </children>
+                </HBox>
+
+                <Region VBox.vgrow="ALWAYS" />
+
+                <VBox fx:id="weatherDetailsBox" alignment="CENTER" spacing="5.0">
+                    <children>
+
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                              <Label fx:id="cityNameLabel" alignment="CENTER" text="City Name" />
+                                <ImageView fx:id="weatherImageIcon" fitHeight="78.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true" />
+                            </children>
+                        </HBox>
+                          <Label fx:id="temperatureUnitLabel" text="Unit" />
+
+                        <Label fx:id="weatherDescLabel" alignment="CENTER" text="Weather Description" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="H:" />
+                        <Label fx:id="highTempLabel" text="High" />
+                        <Region prefHeight="55.0" prefWidth="15.0" />
+                        <Label text="L:" />
+                        <Label fx:id="lowTempLabel" text="Low" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                                <Label text="Feels Like : " />
+                                <Label fx:id="feelsLikeLabel" text="Temp" />
+                        <Region prefHeight="71.0" prefWidth="34.0" />
+
+                                <Label text="Humidity : " />
+                                <Label fx:id="humidityLabel" text="humid" />
+                        <Region prefHeight="71.0" prefWidth="34.0" />
+
+                                <Label text="Wind Speed : " />
+                                <Label fx:id="windSpeedLabel" text="speed" />
+                     </children>
+                  </HBox>
+      
+                      <Button fx:id="forecastBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#getWeatherForecast" text="Get the 24-hour forecast" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                    <VBox.vgrow>
+                        <Priority fx:constant="ALWAYS" />
+                    </VBox.vgrow>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</StackPane>
