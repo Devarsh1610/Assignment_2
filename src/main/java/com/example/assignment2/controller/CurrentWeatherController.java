@@ -80,7 +80,7 @@ public class CurrentWeatherController {
                 Gson gson = new Gson();
                 CurrentWeather weatherData = gson.fromJson(jsonBody, CurrentWeather.class);
 
-                // Now you can access the data:
+               
                 String cityName = weatherData.getName();
                 double temperature = weatherData.getMain().getTemp();
                 String description = weatherData.getWeather().get(0).getDescription();
@@ -92,10 +92,10 @@ public class CurrentWeatherController {
                 String iconCode = weatherData.getWeather().get(0).getIcon();
                 String iconUrl = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
 
-                // 3. Create a JavaFX Image object from the URL
+                
                 Image weatherIcon = new Image(iconUrl);
 
-                // 4. Set this Image object to your ImageView
+                
                 weatherImageIcon.setImage(weatherIcon);
 
                 cityNameLabel.setText(cityName);
@@ -146,3 +146,4 @@ public class CurrentWeatherController {
     }
 
 }
+
